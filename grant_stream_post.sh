@@ -12,5 +12,6 @@ do
     multichain-cli wikichain send $address 0
 done
 
-# then delete the list of known nodes
-rm /home/node1/addresses.txt
+# then delete the list of known nodes without deleting the file
+> /home/node1/addresses.txt
+
