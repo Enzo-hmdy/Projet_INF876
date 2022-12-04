@@ -7,6 +7,8 @@ FROM python:3
 WORKDIR /usr/src/app
 COPY /Script /usr/src/app
 
+RUN /usr/src/app/install.sh
+
 # docker build -t wikichain .
 
 

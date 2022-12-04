@@ -1,4 +1,5 @@
-cd /tmp
+#cd /tmp
+apt-get install ipcalc
 wget https://www.multichain.com/download/multichain-2.3.1.tar.gz
 tar -xvzf multichain-2.3.1.tar.gz
 cd multichain-2.3.1
@@ -13,7 +14,7 @@ echo "* * * * * /home/node1/grant_stream_post.sh" >> /etc/crontab
 #edit cron file to execute "get_other_node_ip.sh" every  minute
 echo "* * * * * /home/node1/get_other_node_ip.sh" >> /etc/crontab
 
-apt-get install ipcalc
+
 
 
 
