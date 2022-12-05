@@ -1,5 +1,5 @@
 #cd /tmp
-apt-get install ipcalc
+apt-get install ipcalc -y
 wget https://www.multichain.com/download/multichain-2.3.1.tar.gz
 tar -xvzf multichain-2.3.1.tar.gz
 cd multichain-2.3.1
