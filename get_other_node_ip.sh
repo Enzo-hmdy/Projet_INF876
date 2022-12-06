@@ -1,6 +1,6 @@
 #/bin/sh!
 ip_addr=$(ip addr show | grep ens33 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | awk '{print $2}')
-export ip_addr=$ip_addr
+export IP_ADDR=$ip_addr
 net_addr=$(ipcalc -n $ip_addr | awk '/Network:/ {print $2}')
 
 # Scan the network for other hosts

@@ -1,6 +1,7 @@
 import os
 import socket
-import signal 
+import signal
+import subprocess
 
 # get the value of the $IP_ADDR environment variable
 ip_addr = os.environ['IP_ADDR']
@@ -32,11 +33,11 @@ while True:
     data = client.recv(1024)
 
     # write the data to the file wallet.txt
-    f.write(data.decode("utf-8"))
+    result = subprocess.run(['multichain-cli', 'wikichain', 'send', data, '0'], stdout=subprocess.PIPE)
 
     
     # echo the data back to the client
-    client.send(data)
+    client.send(result)
     
     # close the connection
     client.close()
