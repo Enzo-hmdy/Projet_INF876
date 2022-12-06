@@ -1,8 +1,18 @@
 <head>
     <title>WikiChain</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+
+    <script>
+        function publierSujet(nom,description){
+            const exec = require('child_process').exec;
+            exec(' script ' + nom + description, (error, stdout, stderr) => {
+                return(stdout);
+            });
+        }
+    </script>
+
 </head>
 
 <header class="py-3 mb-4 border-bottom">
@@ -11,8 +21,30 @@
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
             <span class="fs-4">WikiChain</span>
         </a>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0">
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        <form action="voirSujet.html" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0">
+            <input type="search" class="form-control" id="name" name="name" placeholder="Search..." aria-label="Search">
         </form>
     </div>
 </header>
+
+
+<div class=" flex-column p-6 align-items-center text-center">
+
+
+    <form class="p-3">
+            <label>Nom du sujet</label>
+            <input type="text" class="form-control" id="nom" name="nom" aria-describedby="nom du sujet" placeholder="Nom "/>
+
+            <br>
+
+            <label>Contenu du sujet</label>
+            <textarea type="text" class="form-control" id="content" name="content" aria-describedby="contenu du sujet" placeholder="Contenu"></textarea>
+
+            <br>
+            <a type="button" onclick=publierSujet() class="btn btn-success btn-lg" style="margin-top:
+                50px">Ajouter un Sujet</a>
+
+    </form>
+
+
+</div>
