@@ -19,7 +19,7 @@ sed -E ':a;N;$!ba;s/[[:space:]]*\n[[:space:]]*/ /g' myaddress.txt > myaddress2.t
 rm myaddress.txt
 
 # send the wallet to the master node
-cat myaddress2.txt | telnet $ip 1234
+cat myaddress2.txt | telnet $IP_master 1234
 
 
 
