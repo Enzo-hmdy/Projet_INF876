@@ -5,50 +5,77 @@
     <meta charset="utf-8">
 </head>
 
-<header class="py-3 mb-4 border-bottom">
-    <div class="container d-flex flex-wrap justify-content-center">
-        <a href="index.html" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <span class="fs-4">WikiChain</span>
-        </a>
-        <form action="voirSujet.html" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0">
-            <input type="search" class="form-control" id="name" name="name" placeholder="Search..." aria-label="Search">
-        </form>
-    </div>
+<header class="row" style="margin: 30px;">
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <a href="index.html" type="button" class="btn btn-success btn-lg">
+      <span class="fs-4">WikiChain</span>
+    </a>
+  </div>
+  
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    
+  </div>
+  
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding:20px">
+    <form action="voirSujet.php" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0">
+      <input type="search" class="form-control" id="name" name="name" placeholder="Search..." aria-label="Search">
+    </form>
+  </div>
 </header>
 
 
-<div class="py-3 mb-4 border-bottom">
-
-    <h1 style="text-align: center">
-        <?php
-        
-        $name = $_GET['name'];
-
-        $output = file_get_contents("articles/$name.json");
-        $myArray = json_decode($output, true);
-        echo $myArray['name'];
-        
-        if($output == null){echo $name;}
-        ?>
-    </h1>
-
-    <p>
-	<?php 
+<div class="row">
     
-        $output = file_get_contents("articles/$name.json");
-        $myArray = json_decode($output, true);
-        echo $myArray['content'];
+    
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        
+    </div>
+    
 
-        // if result of exec is null then the topic doesn't exist
-        if($output == null){
-            echo "Cette page n'existe pas, cependant vous pouvez la créer avec le lien ci dessous 
-            <br>";
+    <div class="col-md-8">
 
-            echo "<a href='ajouterSujet.html'>Créer la page</a>";
-        }
+        <h1 style="text-align: center">
+            <?php
+            
+            $name = $_GET['name'];
 
-	?>
-    </p>
+            $output = file_get_contents("articles/$name.json");
+            $myArray = json_decode($output, true);
+            echo $myArray['name'];
+            
+            if($output == null){echo $name;}
+            ?>
+            <hr>
+        </h1>
+
+        <h3>
+        <?php 
+        
+            $output = file_get_contents("articles/$name.json");
+            $myArray = json_decode($output, true);
+            echo $myArray['content'];
+
+            // if result of exec is null then the topic doesn't exist
+            if($output == null){
+                echo "<h3 style='text-align: center'>
+                Cette page n'existe pas, cependant vous pouvez la créer avec le lien ci dessous 
+                <br>";
+
+                echo "<a href='ajouterSujet.html' type='button' style='margin:10px' class='btn btn-success btn-lg'>
+                <span class='fs-4'>Ajouter un sujet</span>
+              </a>
+              </h3>";
+            }
+
+        ?>
+        </h3>
+
+    </div>
+
+    
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        
+    </div>
+    
 
 </div>

@@ -5,45 +5,78 @@
     <meta charset="utf-8">
 </head>
 
-<header class="py-3 mb-4 border-bottom">
-    <div class="container d-flex flex-wrap justify-content-center">
-        <a href="index.html" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <span class="fs-4">WikiChain</span>
-        </a>
-        <form action="voirSujet.php" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0">
-            <input type="search" class="form-control" id="name" name="name" placeholder="Search..." aria-label="Search">
-        </form>
+<header class="row" style="margin: 30px;">
+
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <a href="index.html" type="button" class="btn btn-success btn-lg">
+        <span class="fs-4">WikiChain</span>
+      </a>
     </div>
-</header>
+    
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      
+    </div>
+    
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <form action="voirSujet.php" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0">
+        <input type="search" class="form-control" id="name" name="name" placeholder="Search..." aria-label="Search">
+      </form>
+    </div>
 
+    
+  </header>
 
-<div class=" flex-column p-6 align-items-center text-center">
+  <hr>
 
-
-    <form action="ajouterSujet.php" method="GET" class="p-3">
-        <label>Nom du sujet</label>
-        <input type="text" class="form-control" id="nom" name="nom" value="" aria-describedby="nom du sujet" placeholder="Nom "/>
+<div class="row">
+    
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         
-        <br>
+    </div>
 
-        <label>Contenu du sujet</label>
-        <textarea type="text" class="form-control" id="content" name="content" aria-describedby="contenu du sujet" placeholder="Contenu"></textarea>
-        <br>
+    <div class=" flex-column col-md-4 align-items-center text-center">
 
-        <label>Author of the subject</label>
-        <input type="text" class="form-control" id="author" name="author"/>
+        
 
-        <br>
+        <h1>Ajouter un sujet</h1>
+        <p class="lead" >
+            ceci est la page d’ajout de sujet
+            <br>
+            utilise la barre de recherche pour naviguer sur un sujet. </p>
+        
+        
+        
+        
+        
+        <form action="ajouterSujet.php" method="GET" class="p-3">
+            <label>Nom du sujet</label>
+            <input type="text" class="form-control" id="nom" name="nom" value="" aria-describedby="nom du sujet" placeholder="Nom "/>
+            
+            <br>
 
-        <label>theme of the subject</label>
-        <input type="text" class="form-control" id="theme" name="theme"/>
+            <label>Contenu du sujet</label>
+            <textarea type="text" class="form-control" id="content" name="content" aria-describedby="contenu du sujet" placeholder="Contenu"></textarea>
+            <br>
+
+            <label>Author of the subject</label>
+            <input type="text" class="form-control" id="author" name="author"/>
+
+            <br>
+
+            <label>theme of the subject</label>
+            <input type="text" class="form-control" id="theme" name="theme"/>
 
 
-        <br>
-        <input type="submit" style="margin-top:50px"></input>
+            <br>
+            <input type="submit" style="margin-top:50px"></input>
 
-    </form>
+        </form>
 
+
+    </div>
+
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    
+    </div>
 
 </div>
