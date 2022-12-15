@@ -14,13 +14,15 @@ multichaind wikichain -daemon
 multichain-cli wikichain create stream wikichain true
 multichain-cli wikichain subscribe wikichain
 #edit cron file to execute "get_other_node_ip.sh" every  minute
-echo "* * * * * /home/node1/get_other_node_ip.sh" >> /etc/crontab
+# get path of script get get_other_node_ip.sh
+path=$(pwd)
+echo "* * * * * $path/get_other_node_ip.sh" >> /etc/crontab
 ip_addr=$(ip addr show | grep ens33 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | awk '{print $2}')
 export IP_ADDR=$ip_addr
 nohup python3 ./get_wallet.py &
 mkdir articles
 # edit cron file to execute "get_publish_article.sh" every  minute
-echo "* * * * * /home/node1/get_published_articles.sh" >> /etc/crontab
+echo "* * * * * $path/get_publish_article.sh" >> /etc/crontab
 # activate cron 
 service cron start
 apt-get install jq -y
