@@ -3,6 +3,9 @@
 # every minute ping $RANDOM_NODE_1 and $RANDOM_NODE_2
 # if it's done connect to an other node in adresses.txt
 multichain-cli poc getpeerinfo | jq '.[].addr' | sed 's/"//g; s/:.*//' > connected_node.txt
+# executre get_other_node_ip.sh to get the ip addresses of the other nodes
+./get_other_node_ip.sh
+
 while sleep 5m
 do
   ping -c 1 $RANDOM_NODE_1
@@ -22,7 +25,7 @@ do
                 multichain-cli wikichain@$line:$port -daemon
                 break
             fi
-        done < addresses.txt
+        done < ip_addresses.txt
 
     fi
   ping -c 1 $RANDOM_NODE_2
@@ -42,7 +45,7 @@ do
                 multichain-cli wikichain@$line:$port -daemon
                 break
             fi
-        done < addresses.txt
+        done < ip_addresses.txt
 
     fi
 

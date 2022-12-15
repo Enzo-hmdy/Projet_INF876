@@ -18,9 +18,10 @@ export IP_ADDR=$ip_addr
 nohup python3 ./get_wallet.py &
 mkdir articles
 # edit cron file to execute "get_publish_article.sh" every  minute
-echo "* * * * * /home/node1/get_publish_article.sh" >> /etc/crontab
+echo "* * * * * /home/node1/get_published_articles.sh" >> /etc/crontab
 # activate cron 
 service cron start
+apt-get install jq
 
 
 
