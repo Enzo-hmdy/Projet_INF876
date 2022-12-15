@@ -1,9 +1,8 @@
 <head>
     <title>WikiChain</title>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
-
 </head>
 
 <header class="py-3 mb-4 border-bottom">
@@ -12,7 +11,7 @@
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
             <span class="fs-4">WikiChain</span>
         </a>
-        <form action="voirSujet.html" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0">
+        <form action="voirSujet.php" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0">
             <input type="search" class="form-control" id="name" name="name" placeholder="Search..." aria-label="Search">
         </form>
     </div>
@@ -24,8 +23,8 @@
 
     <form action="ajouterSujet.php" method="GET" class="p-3">
         <label>Nom du sujet</label>
-        <input type="text" class="form-control" id="nom" name="nom" aria-describedby="nom du sujet" placeholder="Nom "/>
-
+        <input type="text" class="form-control" id="nom" name="nom" value="" aria-describedby="nom du sujet" placeholder="Nom "/>
+        
         <br>
 
         <label>Contenu du sujet</label>
@@ -42,7 +41,7 @@
 
 
         <br>
-        <input type="submit" style="margin-top:50px">Ajouter un Sujet</input>
+        <input type="submit" style="margin-top:50px"></input>
 
     </form>
 

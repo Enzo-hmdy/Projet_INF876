@@ -1,7 +1,7 @@
 
 <?php 
 
-$title = $_GET['title'];
+$name = $_GET['name'];
 $content= $_GET['content'];
 $author = $_GET['author'];
 $theme = $_GET['theme'];

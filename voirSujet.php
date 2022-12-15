@@ -21,19 +21,31 @@
 <div class="py-3 mb-4 border-bottom">
 
     <h1 style="text-align: center">
-        <?php echo $_GET['name'];?>
+        <?php
+        
+        $name = $_GET['name'];
+
+        $output = file_get_contents("articles/$name.json");
+        $myArray = json_decode($output, true);
+        echo $myArray['name'];
+        
+        if($output == null){echo $name;}
+        ?>
     </h1>
 
     <p>
-	<?php exec("multichain-cli wikichain getstreamitem $_GET[name] true", $output);
-        $myArray = json_decode($output[0], true);
-        echo $myArray['data']['text'];
+	<?php 
+    
+        $output = file_get_contents("articles/$name.json");
+        $myArray = json_decode($output, true);
+        echo $myArray['content'];
 
         // if result of exec is null then the topic doesn't exist
         if($output == null){
-            echo 'Cette page n\'existe pas, cependant vous pouvez la créer avec le lien ci dessous 
-            <br>
-            <a href="ajouterSujet.html"> ajouter sujet </a>';
+            echo "Cette page n'existe pas, cependant vous pouvez la créer avec le lien ci dessous 
+            <br>";
+
+            echo "<a href='ajouterSujet.html'>Créer la page</a>";
         }
 
 	?>

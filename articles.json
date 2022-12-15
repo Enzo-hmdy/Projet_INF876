@@ -12,30 +12,12 @@
         "data" : {
             "json" : {
                 "Title" : "Jane Smith",
-                "city" : "Paris"
+                "content" : "Paris"
             }
         },
         "confirmations" : 11,
         "blocktime" : 1669682011,
         "txid" : "d68132775ba2bd74374d697c1e0f4e1da4fca91c80a5035e5e6b90dad33156ff"
-    },
-{
-        "publishers" : [
-            "1YraMY26qXdPGraKcfMXkMGguc1dTcaUevf3Kc"
-        ],
-        "keys" : [
-            "key2"
-        ],
-        "offchain" : false,
-        "available" : true,
-        "data" : {
-            "json" : {
-                "Title" : "test2",
-                "city" : "pouet"
-            }
-        },
-        "confirmations" : 11,
-        "blocktime" : 1669682011,
-        "txid" : "d68132775ba2bd74374d697c1e0f4e1da4fca91c80a5035e5e6b90dad33156ff"
-}
+    }
+
 ]
