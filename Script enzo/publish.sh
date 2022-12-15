@@ -9,12 +9,21 @@
 
 # title is argv[1]
 title=$1
+# encapulate the title in double quotes
+title="\"$title\""
+
 # content is argv[2]
 content=$2
 # author is argv[3]
 author=$3
 # theme is argv[4]
 theme=$4
+json_var="json"
+title_field="title"
+content_field="content"
+author_field="author"
+theme_field="theme"
+
 
 
 # publish the article in the wikichain stream 
