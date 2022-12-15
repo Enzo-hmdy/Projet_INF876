@@ -1,7 +1,7 @@
 <head>
     <title>WikiChain</title>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
 </head>
 
@@ -25,7 +25,17 @@
     </h1>
 
     <p>
-	<?php //ta exec(getSujetwithName $_GET['name'], $output);
+	<?php exec("multichain-cli wikichain getstreamitem $_GET[name] true", $output);
+        $myArray = json_decode($output[0], true);
+        echo $myArray['data']['text'];
+
+        // if result of exec is null then the topic doesn't exist
+        if($output == null){
+            echo 'Cette page n\'existe pas, cependant vous pouvez la créer avec le lien ci dessous 
+            <br>
+            <a href="ajouterSujet.html"> ajouter sujet </a>';
+        }
+
 	?>
     </p>
 
