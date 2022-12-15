@@ -7,23 +7,18 @@
 # the user will do in the terminal : ./publish.sh article.json
 # the article.json file will be the first argument of the script
 
-# get the article.json file
-article=$1
+# title is argv[1]
+title=$1
+# content is argv[2]
+content=$2
+# author is argv[3]
+author=$3
+# theme is argv[4]
+theme=$4
 
-# get the title of the article
-title=$(cat $article | jq '.title')
-
-# get the content of the article
-content=$(cat $article | jq '.content')
-
-# get the author of the article
-author=$(cat $article | jq '.author')
-
-# get the theme of the article
-theme=$(cat $article | jq '.theme')
 
 # publish the article in the wikichain stream 
-multichain-cli wikichain publish wikichain wikikey "{\"json\":{\"title\":$title,\"content\":$content,\"author\":$author,\"theme\":$theme}}"
+multichain-cli wikichain publish wikichain wikikey"{\"json\":{\"title\":$title,\"content\":$content,\"author\":$author,\"theme\":$theme}}"
 
 
 
