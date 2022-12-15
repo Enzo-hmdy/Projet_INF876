@@ -23,7 +23,7 @@ author=$(cat $article | jq '.author')
 theme=$(cat $article | jq '.theme')
 
 # publish the article in the wikichain stream 
-multichain-cli wikichain publish wikichain "{\"json\":{\"title\":$title,\"content\":$content,\"author\":$author,\"theme\":$theme}}"
+multichain-cli wikichain publish wikichain wikikey "{\"json\":{\"title\":$title,\"content\":$content,\"author\":$author,\"theme\":$theme}}"
 
 
 
