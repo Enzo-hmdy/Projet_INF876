@@ -1,8 +1,8 @@
-# Set the variables for the article
-AUTHOR="John Doe"
-TITLE="My First Article"
-THEME="Technology"
-CONTENT="This is the content of my first article"
+                                           # Set the variables for the article
+AUTHOR=$1
+TITLE=$2
+THEME=$3
+CONTENT=$4
 
 # Create the JSON string for the article
 JSON_STRING="{\"json\":{\"author\":\"${AUTHOR}\",\"title\":\"${TITLE}\",\"theme\":\"${THEME}\",\"content\":\"${CONTENT}\"}}"

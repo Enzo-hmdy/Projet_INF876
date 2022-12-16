@@ -51,7 +51,7 @@ with open('articles.json') as f:
 for p in data:
     print(p['data']['json'])
     # write output in different file .json with the name of title in folder articles (in linux system)
-    with open('articles/' + p['data']['json']['Title'] + '.json', 'w') as outfile:
+    with open('articles/' + p['data']['json']['title'] + '.json', 'w') as outfile:
         json.dump(p['data']['json'], outfile)
         
         

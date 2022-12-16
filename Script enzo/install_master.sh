@@ -10,15 +10,20 @@ multichain-util create wikichain
 sed -i 's/false/true/g' /home/node1/.multichain/wikichain/params.dat
 apt-get install nmap -y
 apt-get install ipcalc -y
-multichaind wikichain -daemon
+multichaind wikichain -daemon &
+# pause 5 seconds
+sleep 5
 multichain-cli wikichain create stream wikichain true
 multichain-cli wikichain subscribe wikichain
+#chmod every sh script
+chmod +x *.sh
 #edit cron file to execute "get_other_node_ip.sh" every  minute
 # get path of script get get_other_node_ip.sh
 path=$(pwd)
 echo "* * * * * $path/get_other_node_ip.sh" >> /etc/crontab
 ip_addr=$(ip addr show | grep ens33 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | awk '{print $2}')
 export IP_ADDR=$ip_addr
+./get_other_node_ip.sh
 nohup python3 ./get_wallet.py &
 mkdir articles
 # edit cron file to execute "get_publish_article.sh" every  minute
