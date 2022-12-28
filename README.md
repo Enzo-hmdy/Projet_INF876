@@ -13,8 +13,10 @@ only been tested with debian 11 in a VMware environnement ( a virtualised local 
 (must have root privilieges) 
 
 1 - Install git
-2- Clone repo
-3- if you want to create first node of the chain use install_master.sh otherwise install_slaves.sh
+
+2 - Clone repo
+
+3 - if you want to create first node of the chain use install_master.sh otherwise install_slaves.sh
 
 To publish use 
 ./publish.sh autheur theme title content
