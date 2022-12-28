@@ -8,6 +8,8 @@ This a a project to create a wikipedia on blockchain.
 
 only been tested with debian 11 in a VMware environnement ( a virtualised local network)
 
+current state of project is in /script enzo
+
 
 ## HOW TO USE IT 
 (must have root privilieges) 
