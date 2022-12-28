@@ -4,10 +4,18 @@ Welcome in our projet for the cours INF876 from UQAC.
 
 This a a project to create a wikipedia on blockchain.
 
+## Environnement : 
+
+only been tested with debian 11 in a VMware environnement ( a virtualised local network)
+
 
 ## HOW TO USE IT 
+(must have root privilieges) 
 
 1 - Install git
 2- Clone repo
 3- if you want to create first node of the chain use install_master.sh otherwise install_slaves.sh
-4 - will finish readme later 
+
+To publish use 
+./publish.sh autheur theme title content
+
